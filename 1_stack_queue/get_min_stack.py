@@ -10,15 +10,14 @@
 import unittest
 from utils.stack import Stack
 
-'''
-方案一
-    push:stack_min动态添加最小值，item > stack_min栈顶元素时，stack_min保存不变
-    pop:stack_data pop的元素 == stack_min栈顶元素时，stack_min栈顶元素出栈
-    stack_min元素个数 <= stack_data元素个数
-'''
-
 
 class GetMinStack1(object):
+    """
+    方案一
+        push:stack_min动态添加最小值，item > stack_min栈顶元素时，stack_min保存不变
+        pop:stack_data pop的元素 == stack_min栈顶元素时，stack_min栈顶元素出栈
+        stack_min元素个数 <= stack_data元素个数
+    """
 
     def __init__(self):
         # stack_data:数据栈保存所有数据
@@ -48,15 +47,13 @@ class GetMinStack1(object):
         return self.stack_min.peek()
 
 
-'''
-方案二
-    push:stack_min动态添加最小值，item > stack_min栈顶元素时，重复将stack_min栈顶元素加入栈
-    pop:stack_data、stack_min同时出栈，不用作判断
-    stack_min与stack_data元素个数保存一致
-'''
-
-
 class GetMinStack2(object):
+    """
+    方案二
+        push:stack_min动态添加最小值，item > stack_min栈顶元素时，重复将stack_min栈顶元素加入栈
+        pop:stack_data、stack_min同时出栈，不用作判断
+        stack_min与stack_data元素个数保存一致
+    """
 
     def __init__(self):
         # stack_data:数据栈保存所有数据
