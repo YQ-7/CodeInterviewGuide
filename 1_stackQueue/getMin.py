@@ -1,15 +1,14 @@
 # -*- coding: utf-8 -*-
 
-import unittest
-from utils.stack import Stack
-
-'''
+"""
     题目：实现一个特殊的栈，在实现栈的基本功能的基础上，再实现返回栈中最小元素的操作。
     要求：
         1.pop、push、getMin操作的时间复杂度都是O（1）。
-        2.设计的栈类型可以使用现成的栈结构。      
-'''
+        2.设计的栈类型可以使用现成的栈结构。
+"""
 
+import unittest
+from utils.stack import Stack
 
 '''
 方案一
@@ -17,6 +16,8 @@ from utils.stack import Stack
     pop:stack_data pop的元素 == stack_min栈顶元素时，stack_min栈顶元素出栈
     stack_min元素个数 <= stack_data元素个数
 '''
+
+
 class GetMinStack1(object):
 
     def __init__(self):
@@ -53,6 +54,8 @@ class GetMinStack1(object):
     pop:stack_data、stack_min同时出栈，不用作判断
     stack_min与stack_data元素个数保存一致
 '''
+
+
 class GetMinStack2(object):
 
     def __init__(self):
