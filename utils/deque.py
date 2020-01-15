@@ -14,3 +14,6 @@ class Deque(deque):
         value = self.pop()
         self.append(value)
         return value
+
+    def is_empty(self):
+        return len(self) == 0
