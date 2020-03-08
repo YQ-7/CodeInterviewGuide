@@ -6,6 +6,7 @@
 
 import unittest
 from utils.linked_list import TreeNode
+from c9_other import kmp
 
 
 def is_sub_tree(t1, t2):
@@ -13,7 +14,7 @@ def is_sub_tree(t1, t2):
     t1_str = serial_by_pre(t1)
     t2_str = serial_by_pre(t2)
     # 通过kmp算法查找t1是否包含t2
-    return get_index_of(t1_str, t2_str) != -1
+    return kmp.get_index_of(t1_str, t2_str) != -1
 
 
 def serial_by_pre(head):
@@ -28,46 +29,6 @@ def serial_by_pre(head):
     res += serial_by_pre(head.left)
     res += serial_by_pre(head.right)
     return res
-
-
-# KMP算法
-def get_index_of(s, m):
-    if s is None or m is None or len(m) < 1 or len(s) < len(m):
-        return -1
-    si = 0
-    mi = 0
-    next_arr = get_next_array(m)
-    while si < len(s) and mi < len(m):
-        if s[si] == m[mi]:
-            si += 1
-            mi += 1
-        elif next_arr[mi] == -1:
-            si += 1
-        else:
-            mi = next_arr[mi]
-    return si - mi if mi == len(m) else -1
-
-
-def get_next_array(ms):
-    if len(ms) == 1:
-        return [-1]
-    next_arr = [None] * len(ms)
-    next_arr[0] = -1
-    next_arr[1] = 0
-    pos = 2
-    cn = 0
-    while pos < len(next_arr):
-        if ms[pos - 1] == ms[cn]:
-            cn += 1
-            next_arr[pos] = cn
-            pos += 1
-        elif cn > 0:
-            cn = next_arr[cn]
-        else:
-            next_arr[pos] = 0
-            pos += 1
-    return next_arr
-
 
 class MyTestCase(unittest.TestCase):
 
