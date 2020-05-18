@@ -7,7 +7,7 @@
     请返回所有最短的变换路径。
 """
 import unittest
-from utils.queue import Queue
+from utils.my_queue import Queue
 
 
 def find_min_paths(start, to, list_arr):

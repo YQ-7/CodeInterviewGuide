@@ -6,7 +6,7 @@
 
 import unittest
 from utils.linked_list import TreeNode
-from utils.queue import Queue
+from utils.my_queue import Queue
 
 
 def print_level(head):

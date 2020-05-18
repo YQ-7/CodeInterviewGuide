@@ -18,7 +18,7 @@
 """
 
 import unittest
-from utils.queue import Queue
+from utils.my_queue import Queue
 
 
 class Pet(object):

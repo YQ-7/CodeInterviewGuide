@@ -10,7 +10,7 @@
 """
 
 import unittest
-from utils.queue import Queue
+from utils.my_queue import Queue
 from utils.linked_list import TreeNode
 
 
